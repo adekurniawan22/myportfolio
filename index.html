@@ -27,10 +27,10 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link active text-light" aria-current="page" href="index.html">Home</a>
-          <a class="nav-item nav-link text-light" href="#residence">Residence</a>
-          <a class="nav-item nav-link text-light" href="#education">Education</a>
-          <a class="nav-item nav-link text-light" href="#experience">Experience</a>
-          <a class="nav-item nav-link text-light" href="#contactme">Contact Me</a>
+          <a class="nav-item nav-link text-light page-scroll" href="#residence">Residence</a>
+          <a class="nav-item nav-link text-light page-scroll" href="#education">Education</a>
+          <a class="nav-item nav-link text-light page-scroll" href="#experience">Experience</a>
+          <a class="nav-item nav-link text-light page-scroll" href="#contactme">Contact Me</a>
         </div>
       </div>
     </div>
@@ -344,8 +344,14 @@
   </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
   <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    $(".page-scroll").click(function (e) {
+      e.preventDefault();
+      var aid = $(this).attr("href");
+      $('html,body').animate({ scrollTop: $(aid).offset().top }, 1200);
+    });
+  </script>
 </body>
 
 </html>
